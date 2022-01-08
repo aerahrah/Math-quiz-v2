@@ -20,11 +20,11 @@ function question() {
   //
 
   FirstNum = Math.trunc(
-    (Math.random() * 17 + 8) * (Math.round(Math.random()) ? 1 : -1)
+    (Math.random() * 5 + 8) * (Math.round(Math.random()) ? 1 : -1)
   );
 
   SecondNum = Math.trunc(
-    (Math.random() * 23 + 1) * (Math.round(Math.random()) ? 1 : -1)
+    (Math.random() * 8 + 1) * (Math.round(Math.random()) ? 1 : -1)
   );
 
   if (RandomTwoPicker[0] === 0) {
