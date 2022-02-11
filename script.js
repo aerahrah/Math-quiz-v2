@@ -20,11 +20,11 @@ function question() {
   //
 
   FirstNum = Math.trunc(
-    (Math.random() * 5 + 8) * (Math.round(Math.random()) ? 1 : -1)
+    (Math.random() * 17 + 8) * (Math.round(Math.random()) ? 1 : -1)
   );
 
   SecondNum = Math.trunc(
-    (Math.random() * 8 + 1) * (Math.round(Math.random()) ? 1 : -1)
+    (Math.random() * 23 + 1) * (Math.round(Math.random()) ? 1 : -1)
   );
 
   if (RandomTwoPicker[0] === 0) {
@@ -40,7 +40,9 @@ function question() {
 }
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
+
 };
+
 document.querySelector('.next').addEventListener('click', function () {
   counter += 1;
   document.querySelector('.next').disabled = true;
@@ -59,7 +61,7 @@ document.querySelector('.check').addEventListener('click', function () {
   } else if (document.querySelector('.number').textContent === '-') {
     displayMessage('Click start first');
   } else if (guess == CheckAnswer) {
-    if (Tquestion < 25) {
+    if (Tquestion < 10) {
       score++;
       Tquestion++;
       document.querySelector('.title').textContent = `CORRECT ANSWER`;
@@ -73,12 +75,15 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
       document.querySelector('.highscore').textContent = score;
       document.querySelector('body').style.backgroundColor = '#1E6F5C';
-      if (score === 25) {
-        document.querySelector('.between').textContent = 'dagitamann';
+      if (score === 10) {
+        document.getElementById("lock").style.display = "block";
+        document.getElementById("unlock").style.display = "none";
+        document.getElementById("unlock1").style.display = "none";
+        document.getElementById("lock1").style.display = "none";
       }
     }
   } else if (guess != CheckAnswer) {
-    if (Tquestion < 25) {
+    if (Tquestion < 10) {
       document.querySelector('.check').disabled = true;
       document.querySelector('.next').disabled = false;
       document.querySelector('.title').textContent = `WRONG ANSWER`;
@@ -93,8 +98,9 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.score').textContent = score;
       document.querySelector('.highscore').textContent = score;
       document.querySelector('body').style.backgroundColor = '#1E6F5C';
-      if (score == 25) {
-        document.querySelector('.between').textContent = 'dagitamann';
+      if (score == 10) {
+        document.getElementById("lock").style.display = "block";
+        document.getElementById("unlock").style.display = "none";
       }
     }
   }
